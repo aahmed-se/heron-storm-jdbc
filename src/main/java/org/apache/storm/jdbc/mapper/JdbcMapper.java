@@ -17,7 +17,7 @@
  */
 package org.apache.storm.jdbc.mapper;
 
-import org.apache.storm.tuple.ITuple;
+import org.apache.storm.tuple.Tuple;
 import org.apache.storm.jdbc.common.Column;
 
 import java.io.Serializable;
@@ -29,5 +29,5 @@ public interface JdbcMapper extends Serializable {
      * @param tuple
      * @return list of columns that represents one row in a DB table.
      */
-    List<Column> getColumns(ITuple tuple);
+    List<Column> getColumns(Tuple tuple);
 }

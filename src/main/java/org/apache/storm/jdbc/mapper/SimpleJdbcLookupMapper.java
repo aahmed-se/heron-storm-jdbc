@@ -20,9 +20,9 @@ package org.apache.storm.jdbc.mapper;
 
 import org.apache.storm.topology.OutputFieldsDeclarer;
 import org.apache.storm.tuple.Fields;
-import org.apache.storm.tuple.ITuple;
+import org.apache.storm.tuple.Tuple;
 import org.apache.storm.tuple.Values;
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 import org.apache.storm.jdbc.common.Column;
 
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class SimpleJdbcLookupMapper extends SimpleJdbcMapper implements JdbcLook
     }
 
     @Override
-    public List<Values> toTuple(ITuple input, List<Column> columns) {
+    public List<Values> toTuple(Tuple input, List<Column> columns) {
         Values values = new Values();
 
         for(String field : outputFields) {

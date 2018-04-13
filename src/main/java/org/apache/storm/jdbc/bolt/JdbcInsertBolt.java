@@ -20,7 +20,7 @@ import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.OutputFieldsDeclarer;
 import org.apache.storm.tuple.Tuple;
-import org.apache.commons.lang.Validate;
+import org.apache.commons.lang3.Validate;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.storm.jdbc.common.Column;
 import org.apache.storm.jdbc.common.ConnectionProvider;
@@ -74,7 +74,7 @@ public class JdbcInsertBolt extends AbstractJdbcBolt {
     }
 
     @Override
-    public void prepare(Map<String, Object> map, TopologyContext topologyContext, OutputCollector collector) {
+    public void prepare(Map map, TopologyContext topologyContext, OutputCollector collector) {
         super.prepare(map, topologyContext, collector);
         if(StringUtils.isBlank(tableName) && StringUtils.isBlank(insertQuery)) {
             throw new IllegalArgumentException("You must supply either a tableName or an insert Query.");

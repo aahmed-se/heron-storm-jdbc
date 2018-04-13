@@ -17,8 +17,8 @@
  */
 package org.apache.storm.jdbc.mapper;
 
-import org.apache.storm.tuple.ITuple;
-import org.apache.commons.lang.Validate;
+import org.apache.storm.tuple.Tuple;
+import org.apache.commons.lang3.Validate;
 import org.apache.storm.jdbc.common.Column;
 import org.apache.storm.jdbc.common.ConnectionProvider;
 import org.apache.storm.jdbc.common.JdbcClient;
@@ -51,7 +51,7 @@ public class SimpleJdbcMapper implements JdbcMapper {
     }
 
     @Override
-    public List<Column> getColumns(ITuple tuple) {
+    public List<Column> getColumns(Tuple tuple) {
         List<Column> columns = new ArrayList<Column>();
         for(Column column : schemaColumns) {
             String columnName = column.getColumnName();

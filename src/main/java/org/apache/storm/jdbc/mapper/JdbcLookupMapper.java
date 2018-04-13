@@ -18,7 +18,7 @@
 package org.apache.storm.jdbc.mapper;
 
 import org.apache.storm.topology.OutputFieldsDeclarer;
-import org.apache.storm.tuple.ITuple;
+import org.apache.storm.tuple.Tuple;
 import org.apache.storm.tuple.Values;
 import org.apache.storm.jdbc.common.Column;
 
@@ -33,7 +33,7 @@ public interface JdbcLookupMapper extends JdbcMapper {
      * @param columns list of columns that represents a row
      * @return a List of storm values that can be emitted. Each item in list is emitted as an output tuple.
      */
-    public List<Values> toTuple(ITuple input, List<Column> columns);
+    public List<Values> toTuple(Tuple input, List<Column> columns);
 
     /**
      * declare what are the fields that this code will output.

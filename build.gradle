@@ -1,0 +1,23 @@
+plugins {
+    id 'java-library'
+}
+
+def commonslang3Version = '3.3'
+def heronStormVersion = '0.17.8'
+def hsqldbVersion = '2.3.1'
+def hikariVersion = '2.4.3'
+def guavaVersion = '17.0'
+def junitVersion = '4.12'
+
+dependencies {
+    compile group: 'com.google.guava',   name: 'guava',         version: guavaVersion
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: commonslang3Version
+    compile group: 'com.zaxxer',         name: 'HikariCP',      version: hikariVersion
+    compile group: 'com.twitter.heron',  name: 'heron-storm',   version: heronStormVersion
+    testCompile group: 'org.hsqldb',     name: 'hsqldb',        version: hsqldbVersion
+    testCompile group: 'junit',          name: 'junit',         version: junitVersion
+}
+
+repositories {
+    jcenter()
+}

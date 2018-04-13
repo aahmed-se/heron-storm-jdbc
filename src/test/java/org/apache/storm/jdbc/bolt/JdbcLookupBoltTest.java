@@ -17,19 +17,16 @@
  */
 package org.apache.storm.jdbc.bolt;
 
-import org.apache.storm.tuple.Fields;
 import com.google.common.collect.Lists;
 import org.apache.storm.jdbc.common.Column;
 import org.apache.storm.jdbc.common.ConnectionProvider;
 import org.apache.storm.jdbc.common.HikariCPConnectionProvider;
 import org.apache.storm.jdbc.mapper.JdbcLookupMapper;
-import org.apache.storm.jdbc.mapper.JdbcMapper;
 import org.apache.storm.jdbc.mapper.SimpleJdbcLookupMapper;
-import org.apache.storm.jdbc.mapper.SimpleJdbcMapper;
+import org.apache.storm.tuple.Fields;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -39,7 +36,7 @@ public class JdbcLookupBoltTest {
 
     @Test
     public void testValidation() {
-        ConnectionProvider provider = new HikariCPConnectionProvider(new HashMap<String, Object>());
+        ConnectionProvider provider = new HikariCPConnectionProvider(new HashMap<>());
         JdbcLookupMapper mapper = new SimpleJdbcLookupMapper(new Fields("test"), Lists.newArrayList(new Column("test", 0)));
         String selectQuery = "select * from dual";
         expectIllegaArgs(null, selectQuery, mapper);

@@ -35,7 +35,7 @@ public class JdbcInsertBoltTest {
 
     @Test
     public void testValidation() {
-        ConnectionProvider provider = new HikariCPConnectionProvider(new HashMap<String, Object>());
+        ConnectionProvider provider = new HikariCPConnectionProvider(new HashMap<>());
         JdbcMapper mapper = new SimpleJdbcMapper(Lists.newArrayList(new Column("test", 0)));
         expectIllegaArgs(null, mapper);
         expectIllegaArgs(provider, null);
